@@ -37,20 +37,17 @@ function setup(){
     block19 = new block(700,100,70,70)
     block20 = new block(700,100,70,70)
     ground = new Ground(700, 600, 1200, 20);
-    rope1 = new rope(ball.body,{x:500, y:50});
+    rope1 = new rope(ball1.body,{x:500, y:50});
 }
 
 function draw(){
-    if(backgroundImg)
-    background(backgroundImg); 
-    noStroke(); 
-    textSize(35) 
-    fill("white") 
-    text("Score " + score, width-300, 50)
+   
+    background("white"); 
+    
     
     Engine.update(engine);
 
-    ball.display();
+    ball1.display();
     block1.display();
     block2.display();
     block3.display();
@@ -76,5 +73,5 @@ function draw(){
 }
 
 function mouseDragged() {
-    Matter.Body.setPosition(ball.body, { x: mouseX, y: mouseY });
+    Matter.Body.setPosition(ball1.body, { x: mouseX, y: mouseY });
 }
