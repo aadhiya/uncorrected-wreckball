@@ -8,7 +8,9 @@ class ball
 		}
 		this.x = x;
 		this.y = y;
-		this.body = Bodies.rectangle(x, y, width, height, options);
+		this.width=width;
+		this.height=height;
+		this.body = Bodies.rectangle(this.x,this. y, this.width, this.height, options);
 		World.add(world, this.body);
 	}
 	
@@ -18,6 +20,8 @@ class ball
 		push(); 
 		translate(this.body.position.x, this.body.position.y); 
 		rotate(angle); 
+		
+		fill("red");
 		ellipse(0, 0, this.width, this.height);
 		pop();
 	}
